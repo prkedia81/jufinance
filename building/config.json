@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "e-finance-384018",
+    "private_key_id": "9a49c02ae16e469cac82a47799127d08d7ee5760",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEQGjkmvZnjsVY\n/6LVXaVhZj2njUS3Di01oImqc+MFVO1Gl2PbvM72nafS2D6e4uOvYdVxaOS6yJUV\nbrjsXM6I2UVAhUDpH1puvgjbxEPNUcdDzS37GpAQX+r4D19SFfkx5po1A1D86vcm\npa/gRtDRmsTb4l4bP8SArUgmSPl40X9sqgnIpz+jfmvpNIEKhOee+Ix3y6G7MnmX\nmzbCCDotcDL49nIoqwrcEarY/y+uDvfqSM+lJTlrL+LU/i+ir3MAPrWt9eLXb+uv\nPI/GD2rNDwQTTWgSoA9crKsDif2DvmXBGvt7JHrRhgXatr3y8hBwnsE8+XkxRTpy\nqvtnierLAgMBAAECggEAIrNQ2LsdvoncEzSAUkHQsDwnwqyT7dov3D+al+0Nwy+V\nFNpH6d6kqa6OshVSXT25DJW76+WkK/KziaqeQAzY6BGi0Rm+tHm6v8ISRumZI4DG\nPxLUgoXb20lafqoZLKZ9/XjM43rGozHYqZi6VGmxGp7HGCoaga7wy9/X1g0pL1ds\nZUxrUSBuKlmFGykkAdflZAVeXATMwxrv3EDTMUZjC1F915iOhmgV3/Qdg79xNJy/\naj1xcMBXyL2hR2Ag/5DwlWKh0gta/izOBF9uDeJKYxvyAfniKh8ozE1Ggc0ChrXo\nQFMRC/ptTIKvg/wE7xtizWNkjUzqdyP68jlhI9hWIQKBgQDnuHp6umdIoFxppm2z\ndCQyUH04c9Gp5GHea0BUAaKMBn1UMWjj1lF4s4N7rXPrPlnvkfmAY8kLe8kKaHFx\n8InqcnokKaGCEvloGfLkuHHzL//zd9LPcKaFbdGo6ipAVCuwDmKSuGsr00uw9uza\nQE6hQlux2ieXr2GdzOOV98itdwKBgQDY0IiekvusMS3csJFFWPbzE76zKAyCDDIC\nfhRhgx+vtIBSEyRwvdXPIYfKFLlfvZqcNK3IAUEgkVkD94U4tboTU9D1F4YEempn\nR5S6C+2y4IUZUDE/jvJRCVHjdMGkiZwZgPwReZE//n5JE/WFyF6kcvaUXQsl5wP/\nIN4IRTeyTQKBgC6JhD+ltByH6Ednn1yNFL/uHlf6Gr+OGIG89Hxqn6SToRQJoFEx\nt8cP9nYeTcuPCCzvGjbI05W01Jl8hFwnvOsS9qjQm5kuClz36So6SNhYaYUSKYpz\ny128woC0Fqw4u1VubimdVBjHJMpzrPngNGp6k0PS1mTGWkqA3aw+yVTdAoGANU2P\nSOz50quEiu0dyd7FV51TFNiTuqUk5lf4ysBh2eCWa5cpLk59ch7cM2JE8LS8fgq1\nbqZgTJFvQPppVjfXN0kz5g2SdSdjYWDHv7WPCpsIHeEJOob6K9IOv8zEjp8GMX70\neZdZjlIS2gR+KBXKrsNUu8TkKL1SzjZWX9Ikj0ECgYEAyTXAy3juzfuIlZKYLWuy\niWL1C41zdIvCybr14AO7mzKKignKwA9YjC0gjRE96Do6JhfthURylOvJOCRpid5q\nPaU1VKCBNnndY4qCmR0jXKJMaI1BB2DFMbmOC0tvox1rN9J2eor0HPhN3+mXX3EC\nm7UGYjCmM8e5UtiEO+ppcsA=\n-----END PRIVATE KEY-----\n",
+    "client_email": "entre-fin@e-finance-384018.iam.gserviceaccount.com",
+    "client_id": "103135682433340180900",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/entre-fin%40e-finance-384018.iam.gserviceaccount.com"
+  }
+  

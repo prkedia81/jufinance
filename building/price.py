@@ -40,18 +40,18 @@ def string_to_num(str):
 URL = 'https://in.investing.com/equities/larsen-toubro-infotech-ltd-historical-data?end_date=1681671410&st_date=-1070343000'
 
 # Initialize the WebDriver
-# options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
-# options.add_argument("--disable-gpu")
-# options.add_argument("--no-sandbox")
-# options.add_argument("--disable-dev-shm-usage")
-# driver = webdriver.Chrome(
-#     executable_path='./chromedriver.exe', options=options)
-# driver.get(URL)
-# element_present = EC.presence_of_element_located((By.TAG_NAME, 'table'))
-# WebDriverWait(driver, 100).until(element_present)
-# html = driver.page_source
-# driver.quit()
+options = webdriver.ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(
+    executable_path='./chromedriver.exe', options=options)
+driver.get(URL)
+element_present = EC.presence_of_element_located((By.TAG_NAME, 'table'))
+WebDriverWait(driver, 100).until(element_present)
+html = driver.page_source
+driver.quit()
 
 
 # Soup Created

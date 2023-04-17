@@ -18,15 +18,32 @@ class Screener:
 
     def stock_information(self):
         stock_info = {}
+
+        name = self.soup.select(
+            '#top > div.flex.flex-space-between.flex-gap-8 > div > h1')[0].text.strip()
+        link = self.soup.select(
+            '#top > div.company-links.show-from-tablet-landscape > a:nth-child(1)')[0].attrs['href']
         about = self.soup.select(
             '#top .company-info .company-profile p')[0].text
+        bse_link = self.soup.select(
+            '#top > div.company-info > div.company-profile > div.company-links.hide-from-tablet-landscape.margin-top-20 > a:nth-child(2)')[0].attrs['href']
+        try:
+            nse_link = self.soup.select(
+                '#top > div.company-info > div.company-profile > div.company-links.hide-from-tablet-landscape.margin-top-20 > a:nth-child(3)')[0].attrs['href']
+        except:
+            nse_link = ""
+
         sector = self.soup.select('#peers')[0]
         sector_industry = [term for term in re.split("\s\s", sector.find_all(class_='sub')[
             0].text.replace('\n', '').strip()) if term != ""]
         sector = sector_industry[1]
         industry = sector_industry[3]
 
+        stock_info["name"] = name
         stock_info['about'] = about
+        stock_info['link'] = link
+        stock_info['bse_link'] = bse_link
+        stock_info['nse_link'] = nse_link
         stock_info['sector'] = sector
         stock_info['industry'] = industry
         print(stock_info)

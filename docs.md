@@ -1,15 +1,10 @@
 # Data being fetched:
 
-### REQUIRED
-
-- Real time ticker
-- Historical Price Data (Price, Vol, Open, Close)
-
 ### SCREENER
 
-- About the company (Brief, Sector, Industry)
+- About the company (Brief, Sector, Industry, Name, Link to Website, BSE Link, NSE Link)
 - Pros & Cons (Machine Generated)
-- Top Ratios - Market Cap, Current Price, High/ Low Price, P/E, Book Value, Dividend Yield, ROCE, ROE, Face Value
+- Key Highlights - Market Cap, Current Price, High/ Low Price, P/E, Book Value, Dividend Yield, ROCE, ROE, Face Value
 - Consolidated Quarterly Results
 - Consolidated P&L
 - Consolidated B/S
@@ -20,11 +15,19 @@
 
 ### MONEY CONTROL
 
+- Current Price (delayed)
 - Top News
-- Community Sentiments
-- Peers
 - Market Depth
 - Broker Research
+
+### TradingView
+
+- Real Time Ticker
+- Historical Price Data (Price, Vol, Open, Close)
+
+### Investing
+
+- Historical Price Data - Price
 
 * financials : array of tables \*
   ''' financials = [
