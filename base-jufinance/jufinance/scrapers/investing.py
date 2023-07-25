@@ -29,6 +29,19 @@ class Investing:
         return html
 
     def historical_price(self):
+        """
+        Retrieves the historical price data from a web page and parses it into a dictionary.
+
+        Returns:
+            dict: A dictionary containing the historical price data with the following keys:
+                  - "date": A list of dates.
+                  - "price": A list of prices.
+                  - "open": A list of opening prices.
+                  - "high": A list of highest prices.
+                  - "low": A list of lowest prices.
+                  - "volume": A list of trading volumes.
+                  - "change": A list of price changes.
+        """
         soup = BeautifulSoup(self.page_html(), "html.parser")
         table = soup.find("table", class_="common-table medium js-table")
         rows = table.find_all("tr", class_="common-table-item u-clickable")

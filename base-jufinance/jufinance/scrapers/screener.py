@@ -18,6 +18,22 @@ class Screener:
         self.soup = BeautifulSoup(api_response, "html.parser")
 
     def stock_information(self):
+        """
+        Retrieves stock information from the self.soup object and returns a dictionary containing the following information:
+
+        Parameters:
+        - self: The instance of the class.
+
+        Returns:
+        - stock_info: A dictionary containing the following keys:
+            - name: The name of the stock.
+            - about: A brief description of the stock.
+            - link: The link to the stock's website.
+            - bse_link: The link to the stock's BSE page.
+            - nse_link: The link to the stock's NSE page (empty string if not available).
+            - sector: The sector the stock belongs to.
+            - industry: The industry the stock belongs to.
+        """
         stock_info = {}
 
         name = self.soup.select(
@@ -68,12 +84,24 @@ class Screener:
         return price
 
     def pros_and_cons(self):
+        """
+        Retrieves the pros and cons from the analysis section of the web page.
+
+        :return: A dictionary containing the pros and cons as lists.
+        :rtype: dict
+        """
         pros = [item.text for item in self.soup.select("#analysis .pros li")]
         cons = [item.text for item in self.soup.select("#analysis .cons li")]
         pros_and_cons = {"pros": pros, "cons": cons}
         return pros_and_cons
 
     def basic_info(self):
+        """
+        Retrieves the basic information from the HTML page.
+
+        :return: A dictionary containing the ratios and their corresponding values.
+                 The keys are the names of the ratios and the values are the numbers associated with each ratio.
+        """
         ratios_html = self.soup.select("#top-ratios li")
         ratios = {
             ratio.find_all(class_="name")[0]
@@ -84,6 +112,22 @@ class Screener:
         return ratios
 
     def financials(self, statement_name):
+        """
+        Retrieves the financial data for a given statement.
+
+        Args:
+            statement_name (str): The name of the statement to retrieve the financial data for.
+
+        Returns:
+            dict: A dictionary containing the financial data for the statement.
+                - id (str): The ID of the statement.
+                - title (str): The title of the statement.
+                - content (dict): A dictionary containing the content of the statement.
+                    - row_head (str): The header of a row in the statement.
+                        - th[counter] (str): The column header.
+                            - item (str): The value in the cell.
+
+        """
         table_id = statement_name
         # ['quarters', 'profit-loss', 'balance-sheet', 'cash-flow', 'ratios', 'shareholding']
 
@@ -120,22 +164,22 @@ class Screener:
         return financial
 
     def profit_loss_statement(self):
-        self.financials(statement_name=["profit-loss"])
+        return self.financials(statement_name=["profit-loss"])
 
     def balance_sheet(self):
-        self.financials(statement_name=["balance-sheet"])
+        return self.financials(statement_name=["balance-sheet"])
 
     def quarterly_statement(self):
-        self.financials(statement_name=["quarters"])
+        return self.financials(statement_name=["quarters"])
 
     def cash_flow_statement(self):
-        self.financials(statement_name=["cash-flow"])
+        return self.financials(statement_name=["cash-flow"])
 
     def common_ratios(self):
-        self.financials(statement_name=["ratios"])
+        return self.financials(statement_name=["ratios"])
 
     def shareholding_pattern(self):
-        self.financials(statement_name=["shareholding"])
+        return self.financials(statement_name=["shareholding"])
 
     def company_announcements(self):
         announcements_li_items = self.soup.select("#company-announcements-tab li")
@@ -161,6 +205,12 @@ class Screener:
         return document
 
     def annual_reports(self):
+        """
+        Retrieves the annual reports for the given company.
+
+        :param self: The current instance of the class.
+        :return: None
+        """
         self.documents("annual-reports")
 
     def credit_rating_reports(self):

@@ -13,11 +13,33 @@ class MoneyControl:
         self.soup = BeautifulSoup(api_response, "html.parser")
 
     def current_price(self):
+        """
+        Returns the current price of a stock.
+
+        This function uses web scraping to find the current price of a stock. It searches for a specific HTML element 
+        using the BeautifulSoup library and extracts the text value of that element. The stock price is then returned.
+
+        Parameters:
+            self (object): The instance of the class.
+
+        Returns:
+            str: The current price of the stock as a string.
+        """
         price = self.soup.find("div", class_="indimprice")
         stock_price = price.find("div", {"id": "nsecp"}, class_="inprice1 nsecp").text
         return stock_price
 
     def market_depth(self):
+        """
+        Retrieves the market depth data from the HTML soup object.
+
+        Returns:
+            dict: A dictionary containing the buy and sell order book.
+                The buy order book is represented as a list of dictionaries,
+                where each dictionary contains the quantity and price of a buy order.
+                The sell order book is also represented as a list of dictionaries,
+                where each dictionary contains the quantity and price of a sell order.
+        """
         order = self.soup.find("div", class_="div_market_depth_table")
         order_table = order.find("table", id="best_5_box_table")
         order_rows = order_table.findAll("tr")
@@ -33,6 +55,15 @@ class MoneyControl:
         return order_book
 
     def price_change(self):
+        """
+        Retrieves the price change information from the website.
+
+        Returns:
+            change (dict): A dictionary containing the amount change and percent change.
+
+        Raises:
+            AttributeError: If the website structure has changed and the required elements cannot be found.
+        """
         change = self.soup.find("div", class_="indimprice")
         price_change = change.find(
             "div", {"id": "nsechange"}, class_="pricupdn nsechange grn"
@@ -45,6 +76,18 @@ class MoneyControl:
         return change
 
     def broker_research(self):
+        """
+        Retrieves broker research data from a webpage and returns a list of dictionaries containing the research information.
+
+        Returns:
+            all_broker_research (list): A list of dictionaries, where each dictionary represents a broker research report.
+                Each dictionary contains the following keys:
+                - name (str): The name of the broker.
+                - date (str): The date of the research report.
+                - reco_price (float): The recommended price mentioned in the report.
+                - target_price (float): The target price mentioned in the report.
+                - link (str): The link to the full research report.
+        """
         all_broker_research = []
         whole_list = self.soup.find("div", class_="brrs_stock")
         new_variable = whole_list.findChildren("div", recursive=False)
@@ -71,6 +114,12 @@ class MoneyControl:
         return all_broker_research
 
     def top_news(self):
+        """
+        Retrieves the top news from the webpage.
+
+        Returns:
+            list: A list of dictionaries containing the name, link, and date of each top news item.
+        """
         li_list = self.soup.select("#news > div.news_list.clearfix > ul > li")
         top_news = []
         for item in li_list:
