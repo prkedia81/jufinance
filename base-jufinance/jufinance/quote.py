@@ -1,7 +1,7 @@
 # Get the quote details
 # - current price, company info, etc.
 
-from efinance.scrapers import Investing, MoneyControl, Screener
+from jufinance.scrapers import Investing, MoneyControl, Screener
 
 
 class Quote:

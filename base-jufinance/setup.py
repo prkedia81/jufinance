@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.1"
+VERSION = "0.0.11"
 DESCRIPTION = "Python Package to access Indian Stock market data."
 LONG_DESCRIPTION = "Python Package to access Indian Stock market data. This is for educational purposes only."
 
