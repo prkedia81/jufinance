@@ -1,6 +1,6 @@
-from quote import Quote
+from efinance import Quote
 
-tickers = ['INFY', 'RELIANCE', 'HDFCBANK', 'HDFC']
+tickers = ["INFY", "RELIANCE", "HDFCBANK", "HDFC"]
 quote = Quote(tickers[1])
 
 # quote.get_stock_info()
