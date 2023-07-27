@@ -1,7 +1,7 @@
-from efinance import Quote
+import jufinance as jf
 
 tickers = ["INFY", "RELIANCE", "HDFCBANK", "HDFC"]
-quote = Quote(tickers[1])
+quote = jf.Quote(tickers[1])
 
 # quote.get_stock_info()
 
@@ -23,4 +23,4 @@ quote = Quote(tickers[1])
 
 # quote.get_top_news()
 
-quote.get_stock_historical_data()
+print(quote.get_stock_historical_data())
