@@ -2,6 +2,7 @@
 # - current price, company info, etc.
 
 from jufinance.scrapers import Investing, MoneyControl, Screener
+import datetime as dt
 
 
 class Quote:
@@ -12,7 +13,7 @@ class Quote:
         self.mc = MoneyControl(ticker=ticker)
         self.mc.get_soup()
         self.investing = Investing(
-            ticker=ticker, start_time=1070343000, end_time=1681671410
+            ticker=ticker, start_time=1070343000, end_time=dt.datetime.now().timestamp()
         )
 
     def get_all_stock_data(self):

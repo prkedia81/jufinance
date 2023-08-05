@@ -1,10 +1,12 @@
 import datetime as dt
+import json
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from jufinance.scrapers.data.links import links_dict
 
 
 class Investing:
@@ -12,7 +14,12 @@ class Investing:
         # self.start_time = int(dt.datetime(start_time).timestamp())
         # self.end_time = int(dt.datetime(end_time).timestamp())
         self.ticker = ticker
-        self.URL = f"https://in.investing.com/equities/larsen-toubro-infotech-ltd-historical-data?end_date={end_time}&st_date=-{start_time}"
+        with open("jufinance/scrapers/links.json", "r") as file:
+            link_dict = json.load(file)
+        base_URL = link_dict[self.ticker]["investing_link"]
+        self.URL = (
+            base_URL + f"-historical-data?end_date={end_time}&st_date=-{start_time}"
+        )
 
     def page_html(self):
         options = webdriver.ChromeOptions()

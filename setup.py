@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.11"
+VERSION = "0.0.12"
 DESCRIPTION = "Python Package to access Indian Stock market data."
 LONG_DESCRIPTION = "Python Package to access Indian Stock market data. This is for educational purposes only."
 
@@ -44,13 +44,9 @@ setup(
         "wsproto",
     ],  # add any additional packages that
     # needs to be installed along with your package. Eg: 'caer'
-    keywords=["python", "first package"],
+    keywords=["python", "finance", "stock market"],
     classifiers=[
-        "Development Status :: 3 - Alpha",
         "Intended Audience :: Education",
-        # "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
-        "Operating System :: MacOS :: MacOS X",
-        "Operating System :: Microsoft :: Windows",
     ],
 )

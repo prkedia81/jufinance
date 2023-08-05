@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import json
+from jufinance.scrapers.data.links import links_dict
 
 
 class MoneyControl:
@@ -8,7 +10,9 @@ class MoneyControl:
         self.ticker = ticker
 
     def get_soup(self):
-        self.mc_URL = "https://www.moneycontrol.com/india/stockpricequote/paintsvarnishes/bergerpaintsindia/BPI02"
+        with open("jufinance/scrapers/links.json", "r") as file:
+            link_dict = json.load(file)
+        self.mc_URL = link_dict[self.ticker]["moneycontrol_link"]
         api_response = requests.get(self.mc_URL).text
         self.soup = BeautifulSoup(api_response, "html.parser")
 
@@ -16,7 +20,7 @@ class MoneyControl:
         """
         Returns the current price of a stock.
 
-        This function uses web scraping to find the current price of a stock. It searches for a specific HTML element 
+        This function uses web scraping to find the current price of a stock. It searches for a specific HTML element
         using the BeautifulSoup library and extracts the text value of that element. The stock price is then returned.
 
         Parameters:

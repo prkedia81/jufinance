@@ -1,11 +1,11 @@
 import jufinance as jf
 
 tickers = ["INFY", "RELIANCE", "HDFCBANK", "HDFC"]
-quote = jf.Quote(tickers[1])
+quote = jf.Quote(tickers[2])
 
 # quote.get_stock_info()
 
-# quote.get_current_price()
+# print(quote.get_current_price())
 
 # quote.get_pros_and_cons()
 
@@ -23,4 +23,4 @@ quote = jf.Quote(tickers[1])
 
 # quote.get_top_news()
 
-print(quote.get_stock_historical_data())
+# print(quote.get_stock_historical_data())
