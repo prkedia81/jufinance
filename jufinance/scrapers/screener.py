@@ -128,7 +128,7 @@ class Screener:
                             - item (str): The value in the cell.
 
         """
-        table_id = statement_name
+        [table_id] = statement_name
         # ['quarters', 'profit-loss', 'balance-sheet', 'cash-flow', 'ratios', 'shareholding']
 
         title = self.soup.select(f"#{table_id} h2")[0].text.strip()  # Quarterly Results
@@ -194,7 +194,6 @@ class Screener:
         # ['annual-reports', 'credit-ratings', 'concalls']
 
         document_html = self.soup.select(f"#documents .{class_name}")[0]
-        # print(document_html)
         title = document_html.h3.text.strip()
         li_items = document_html.find_all("li")
         document = {
@@ -211,10 +210,10 @@ class Screener:
         :param self: The current instance of the class.
         :return: None
         """
-        self.documents("annual-reports")
+        return self.documents("annual-reports")
 
     def credit_rating_reports(self):
-        self.documents("credit-ratings")
+        return self.documents("credit-ratings")
 
     def concalls(self):
-        self.documents("concalls")
+        return self.documents("concalls")

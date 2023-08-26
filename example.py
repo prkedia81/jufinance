@@ -11,9 +11,9 @@ quote = jf.Quote(tickers[2])
 
 # quote.get_basic_info()
 
-# quote.get_financials()
+# print(quote.get_financials())
 
-# quote.get_annual_reports()
+# print(quote.get_annual_reports())
 
 # quote.get_market_depth()
 
