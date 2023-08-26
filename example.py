@@ -1,9 +1,11 @@
 import jufinance as jf
 
+print('enter ticker name')
+
 tickers = ["INFY", "RELIANCE", "HDFCBANK", "HDFC"]
 quote = jf.Quote(tickers[2])
 
-# quote.get_stock_info()
+quote.get_stock_info()
 
 # print(quote.get_current_price())
 
