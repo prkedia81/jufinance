@@ -127,6 +127,12 @@ print(current_price)
      historical_data = quote.get_stock_historical_data()
      print(historic_data)
 ```
+- #### To get the stock's DCF Valuation using industry discount rates:
+
+```python
+     dcf_valuation = quote.get_dcf_value()
+     print(dcf_valuation)
+```
 
 - #### To get the stock's price change:
 
