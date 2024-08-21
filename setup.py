@@ -16,6 +16,10 @@ setup(
     long_description_content_type="text/markdown",
     url=GITHUB_URL,
     packages=find_packages(),
+    include_package_data=True,  # This ensures package data is included
+    package_data={
+        'jufinance': ['scrapers/links.json'],  # Add the path to links.json
+    },
     install_requires=[
         "beautifulsoup4",
         "bs4",
