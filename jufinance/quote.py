@@ -2,6 +2,7 @@
 # - current price, company info, etc.
 
 from jufinance.scrapers import Investing, MoneyControl, Screener
+
 import datetime as dt
 
 
@@ -159,3 +160,8 @@ class Quote:
         """
         # print("Getting top news")
         return self.mc.top_news()
+
+if __name__ == "__main__":
+    quote = Quote("HDFC")
+    cur = quote.get_current_price()
+    print(cur)
