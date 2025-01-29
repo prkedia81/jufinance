@@ -1,4 +1,5 @@
 # JUFinance
+[![PyPI Downloads](https://static.pepy.tech/badge/jufinance)](https://pepy.tech/projects/jufinance)  [![PyPI Downloads](https://static.pepy.tech/badge/jufinance/month)](https://pepy.tech/projects/jufinance)  [![PyPI Downloads](https://static.pepy.tech/badge/jufinance/week)](https://pepy.tech/projects/jufinance)
 
 ### All-in-one Python Package for all stock market data.
 
